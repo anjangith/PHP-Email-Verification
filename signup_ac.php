@@ -63,7 +63,7 @@ $mail->SMTPSecure = 'ssl';
 // used only when SMTP requires authentication  
 $mail->SMTPAuth = true;
 $mail->Username = 'as273863@gmail.com';
-$mail->Password = 'anjanfake';
+$mail->Password = 'password';
 //$mail->SMTPDebug = 1;
 $mail->Port = "465";
 
