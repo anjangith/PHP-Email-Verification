@@ -1,3 +1,11 @@
+<?php
+include('login_ac.php'); // Includes Login Script
+if(isset($_SESSION['login_user'])){
+header("location: profile.php"); // Redirecting To Profile Page
+}
+?> 
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,10 +39,11 @@
         font-weight: bold;
     }
 </style>
+</script>
 </head>
 <body>
 <div class="login-form">
-    <form name="form1" action="signup_ac.php" method="post">
+    <form name="form1" action="login_ac.php"method="post">
         <h2 class="text-center">Log in</h2>       
         <div class="form-group">
             <input type="text" id="name" name="name" class="form-control" placeholder="Username" required="required">
@@ -43,11 +52,6 @@
 		<div class="form-group">
             <input type="text" id="email" name="email" class="form-control" placeholder="Email" required="required">
         </div>
-		
-		<div class="form-group">
-            <input type="text" id="country" name="country" class="form-control" placeholder="Country" required="required">
-        </div>
-		
         
 		
 		<div class="form-group">
@@ -58,12 +62,10 @@
         <div class="form-group">
             <button type="submit" name="Submit" class="btn btn-primary btn-block">Submit</button>
         </div>
-        <div class="clearfix">
-            <label class="pull-left checkbox-inline"><input type="checkbox"> Remember me </label>
-            <a href="#" class="pull-right">Forgot Password?</a>
-        </div>        
+		
+		<h2><?php echo $error ?></h2>
+             
     </form>
-    <p class="text-center"><a href="#">Create an Account</a></p>
 </div>
 </body>
 </html>        

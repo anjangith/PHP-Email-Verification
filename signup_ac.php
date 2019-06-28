@@ -48,11 +48,11 @@ $message.="http://localhost/VerificationEmail/confirmation.php?passkey=$confirm_
 
 
 // send email
-$mail->setFrom('as273863@gmail.com', 'Anjan');
+$mail->setFrom('as273863@gmail.com', 'Teja');
 $mail->addAddress($email, 'My Friend');
 $mail->Subject  = $subject;
 $mail->Body     = $message;
-$mail->SMTPDebug=2;
+$mail->SMTPDebug=0;
 $mail->isHTML(true);
 
 $mail->IsSMTP();
@@ -71,7 +71,7 @@ if(!$mail->send()) {
   echo 'Message was not sent.';
   echo 'Mailer error: ' . $mail->ErrorInfo;
 } else {
-  echo 'Message has been sent.';
+  echo '<h3>Check your email to confirm<h3>';
 }
 }
 
